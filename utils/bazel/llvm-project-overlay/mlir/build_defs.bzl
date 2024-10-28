@@ -4,6 +4,17 @@
 
 """Rules and macros for MLIR"""
 
+# These flags are needed for pybind11 to work.
+PYBIND11_COPTS = [
+    "-fexceptions",
+    "-frtti",
+]
+
+PYBIND11_FEATURES = [
+    # Cannot use header_modules (parse_headers feature fails).
+    "-use_header_modules",
+]
+
 def if_cuda_available(if_true, if_false = []):
     return select({
         # CUDA auto-detection is not yet supported.

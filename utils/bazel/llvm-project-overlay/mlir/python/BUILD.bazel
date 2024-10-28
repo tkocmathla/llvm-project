@@ -35,7 +35,7 @@ filegroup(
 filegroup(
     name = "ExecutionEnginePyIFiles",
     srcs = [
-        "mlir/_mlir_libs/_mlirExecutionEngine.pyi",
+        "//mlir/python/mlir/_mlir_libs:_mlirExecutionEngine.pyi",
     ],
 )
 
@@ -56,15 +56,15 @@ filegroup(
 filegroup(
     name = "IRPyIFiles",
     srcs = [
-        "mlir/_mlir_libs/_mlir/__init__.pyi",
-        "mlir/_mlir_libs/_mlir/ir.pyi",
+        "//mlir/python/mlir/_mlir_libs:_mlir/__init__.pyi",
+        "//mlir/python/mlir/_mlir_libs:_mlir/ir.pyi",
     ],
 )
 
 filegroup(
     name = "MlirLibsPyFiles",
     srcs = [
-        "mlir/_mlir_libs/__init__.py",
+        "//mlir/python/mlir/_mlir_libs:__init__.py",
     ],
 )
 
@@ -78,7 +78,7 @@ filegroup(
 filegroup(
     name = "PassManagerPyIFiles",
     srcs = [
-        "mlir/_mlir_libs/_mlir/passmanager.pyi",
+        "//mlir/python/mlir/_mlir_libs:_mlir/passmanager.pyi",
     ],
 )
 
@@ -727,7 +727,7 @@ gentbl_filegroup(
 filegroup(
     name = "PDLPyIFiles",
     srcs = [
-        "mlir/_mlir_libs/_mlir/dialects/pdl.pyi",
+        "//mlir/python/mlir/_mlir_libs:_mlir/dialects/pdl.pyi",
     ],
 )
 
@@ -777,7 +777,7 @@ filegroup(
 filegroup(
     name = "QuantPyIFiles",
     srcs = [
-        "mlir/_mlir_libs/_mlir/dialects/quant.pyi",
+        "//mlir/python/mlir/_mlir_libs:_mlir/dialects/quant.pyi",
     ],
 )
 

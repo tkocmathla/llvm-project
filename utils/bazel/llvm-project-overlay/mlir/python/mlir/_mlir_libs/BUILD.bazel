@@ -1,0 +1,25 @@
+load("//mlir:build_defs.bzl", "PYBIND11_COPTS", "PYBIND11_FEATURES")
+
+package(default_visibility = ["//visibility:public"])
+
+# For //mlir/python:MlirLibsPyFiles
+exports_files(["__init__.py"])
+
+# Dynamic library with the MLIR Python extension.
+cc_binary(
+    name = "_mlir.so",
+    srcs = ["@llvm-project//mlir:lib/Bindings/Python/MainModule.cpp"],
+    # These flags are needed for pybind11 to work.
+    copts = PYBIND11_COPTS,
+    features = PYBIND11_FEATURES,
+    linkshared = 1,
+    linkstatic = 0,
+    tags = [
+        "manual",  # External dependency
+        "nobuildkite",  # TODO(gcmn): Add support for this target
+    ],
+    deps = [
+        "@llvm-project//mlir:MLIRBindingsPythonCore",
+        "@llvm-project//mlir:MLIRBindingsPythonHeadersAndDeps",
+    ],
+)
